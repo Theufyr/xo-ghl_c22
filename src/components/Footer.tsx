@@ -7,14 +7,20 @@ export default  function footer() {
                 <div>
                     <h2>ADAOPTE</h2>
                     <p>Notre mission est de trouver des foyers aimants pour chaque animal abandonné et de promouvoir le bien-être animal. </p>
+                    <p>
+                        <Link to = "/"><img src="/src/assets/icons/facebook.png" alt="facebook" /></Link>
+                        <Link to = "/"><img src="/src/assets/icons/instagram.png" alt="instagram" /></Link>
+                        <Link to = "/"><img src="/src/assets/icons/linkedin.png" alt="linkedin" /></Link>
+                        <Link to = "/"><img src="/src/assets/icons/twitch.png" alt="twitch" /></Link>
+                    </p>
                 </div>
                 
                 <div>
                     <h2>INFORMATIONS UTILES</h2>
-                    <Link to = "/">FAQs</Link>
-                    <Link to = "/">Conseils d'adoption</Link>
-                    <Link to = "/">Nous contacter</Link>
-                    <Link to = "/">Mentions légales </Link>
+                    <p><Link to = "/">FAQs</Link></p>
+                    <p><Link to = "/">Conseils d'adoption</Link></p>
+                    <p><Link to = "/">Nous contacter</Link></p>
+                    <p><Link to = "/">Mentions légales </Link></p>
                 </div>
 
                 <div>
