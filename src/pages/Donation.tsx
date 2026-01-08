@@ -1,10 +1,11 @@
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
-export default function Jadopte() {
+
+export default function Donation() {
     return(
         <>
-        <Navbar/>
-        <Footer/>
+            <Navbar/>
+            <Footer/>
         </>
     )
 }

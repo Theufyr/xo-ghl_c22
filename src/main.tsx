@@ -3,8 +3,10 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './pages/Home'
-import Jadopte from './pages/Jadopte'
-
+import Adopt from './pages/Adopt'
+import Guide from './pages/Guide'
+import Benevole from './pages/Benevole'
+import Donation from './pages/Donation'
 
 
 const router = createBrowserRouter ([
@@ -14,7 +16,19 @@ const router = createBrowserRouter ([
   },
    {
     path : "jadopte" ,
-    element : <Jadopte />
+    element : <Adopt />
+  },
+   {
+    path : "guide" ,
+    element : <Guide />
+  },
+   {
+    path : "benevole" ,
+    element : <Benevole />
+  },
+   {
+    path : "don" ,
+    element : <Donation />
   }
 ]  
 ) ;
