@@ -2,15 +2,22 @@
     --primary-color: #fffaf7;
     --secondary-color: #ff6d38;
     --accent-color: #7a78ff;
-    --heading-color: #000;
-    --light-color: #fffaf7;
-    --dark-color: #a8a8a8;
+    --heading-color: #333;
+    --light-color: #f9f9f9;
+    --dark-color: #333;
 
     --btn-primary-bg: #333;
     --btn-secondary-bg: #e74c3c;
     --btn-accent-bg: #00a652;
     --btn-primary-hover-bg: #8584ff;
-    --btn-secondary-hover-bg: #474747;
+    --btn-secondary-hover-bg: #333;
+
+    
+    --white-color: #fff;
+    --black-color: #000;
+    --light-bg: #fafafa;
+    --dark-bg: #a8a8a8;
+    --darker-bg: #474747;
 
     --font-family-heading: 'Amatic SC', sans-serif;
     --border-radius: 8px;
@@ -23,10 +30,11 @@
     --section-margin: 2rem 0;
     --container-width: 90%;
 
-    background-color: var(--primary-color);
+    background-color: var(--white-color);
     font-family: BadComic;
-    color: var(--heading-color);
+    color: var(--black-color);
     font-size: 14px;
+    min-width: 420px;
 }
 
 @font-face {
@@ -39,20 +47,60 @@
     src: url(./assets/fonts/AmaticSC-Regular.ttf);
 }
 
+h1, h2 {
+    font-family: AmaticSC;
+}
+
 a:any-link {
-    color: var(--dark-color);
+    color: var(--dark-bg);
     text-decoration: none;
     cursor:pointer;
 }
 
-footer, nav {
+nav, section, footer, form, section#howto article {
+    margin-bottom: 0.5rem;
     padding: 1rem;
+    justify-self: center;
     text-align: justify;
-    color: var(--heading-color);
+    color: var(--black-color);
+    box-shadow: var(--shadow-md);
 }
 
+form {
+    width: 60%;
+    margin-top: 6rem;
+    display: flex;
+    justify-self: center;
+    justify-content: space-around;
+    text-align: left;
+    border-radius: 0.5rem;
+    background-color: var(--white-color);
+}
+form>div {
+    width: 33%;
+    padding: 1rem;
+}
+form select, form input, form button {
+    margin-top: 0.2rem;
+    padding: 0.2rem 0.5rem;
+    width: 100%;
+}
+form select, form input {
+    border-radius: 0.2rem;
+}
+form button, #animals button {
+    border-radius: 1rem;
+    color: var(--white-color);
+    background-color: var(--black-color);
+}
+#animals button {
+    padding: 0.2rem 0.5rem;
+}
+
+/* NavBar */
 nav {
-    background-color:var(--light-color);
+    width: 100%;
+    background-color:var(--primary-color);
 }
 nav>div {
     display: flex;
@@ -68,7 +116,7 @@ nav>div div:first-child {
     font-weight: bold;
 }
 nav a:any-link {
-    color: var(--heading-color);
+    color: var(--black-color);
     margin-right: 1rem;
 }
 nav span span {
@@ -83,38 +131,94 @@ nav>div div:first-child img{
 nav>div div:last-child {
     margin-top: 0.3rem;
 }
-nav>div div:last-child span {
+nav>div div:last-child span, #button1, #button2, #button3 {
     padding: 0.5rem  1rem;
     border-radius: 1rem;
-    color: var(--primary-color);
-    background-color: var(--secondary-color);
+    color: var(--white-color);
+    background-color: var(--btn-secondary-bg);
 }
-nav>div div:last-child span:hover {
+nav>div div:last-child span:hover, #button1:hover, #button2:hover, #button3:hover {
     background-color: var(--btn-primary-hover-bg);
 }
+#button1 {
+    margin-right: 1rem;
+    background-color: var(--black-color);
+}
+#button2 {
+    margin-right: 1rem;
+}
+#button3 {
+    background-color: var(--btn-accent-bg);
+}
 
+/* Section */
+section {
+    width: var(--container-width);
+    text-align: center;
+    background-color: var(--light-color);
+}
 
+section p {
+    width: 60%;
+    justify-self: center;
+}
+
+#title {
+    width: 100%;
+    color: var(--white-color);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('./src/assets/img/background.jpg');
+}
+#title h1 {
+    margin-top: 7rem;
+}
+#howto {
+    background-color: var(--white-color);
+    box-shadow: none;
+}
+#howto div {
+    display: flex;
+}
+#howto h2, #howto p {
+    text-align: center;
+}
+#howto article {
+    width: 25%;
+}
+article {
+    width: 100%;
+    text-align: center;
+}
+article div {
+    display: flex;
+    justify-content: center;
+}
+article img {
+    width: 20%;
+}
+
+/* Footer */
 footer {
-    color: var(--primary-color);
+    color: var(--white-color);
     background-color: var(--btn-primary-bg);
 }
 footer img {
     padding: 0.2rem;
     margin-right: 0.5rem;
-    background-color: var(--btn-secondary-hover-bg);
+    background-color: var(--darker-bg);
     border-radius: 0.5rem;
 }
 footer img:hover {
     background-color: var(--btn-primary-hover-bg);
 }
 footer h2 {
-    font-family: AmaticSC;
     color: var(--secondary-color);
 }
 footer hr {
-    color: var(--dark-color);
-    border-color: var(--dark-color);
-    background-color: var(--dark-color);
+    color: var(--dark-bg);
+    border-color: var(--dark-bg);
+    background-color: var(--dark-bg);
 }
 footer>div:first-child {
     display: flex;
@@ -128,6 +232,7 @@ footer>div:last-child {
     text-align: center;
 }
 
+/* Links */
 a:any-link:hover {
     color: var(--btn-primary-hover-bg);
 }
@@ -135,6 +240,7 @@ a:any-link.active {
     color: var(--secondary-color);
 }
 
+/* Responsive */
 @media (min-width:768px) {
     :root {
         font-size: 16px;
