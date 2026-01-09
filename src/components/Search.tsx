@@ -10,19 +10,20 @@ export default function Search () {
     return (
         <form onSubmit={submitFrom}>
             <div>
-                <label htmlFor="">Type d'animal</label> 
+                <div><label htmlFor="">Type d'animal</label></div>
                 <select onChange={(event) => setAnimalType(event.target.value)}>
                     <option value="chat">chat </option> 
                     <option value="chien">chien</option>
                 </select>
             </div>
             <div>
-                <label htmlFor="">Localisation</label>
+                <div><label htmlFor="">Localisation</label></div>
                 <input value={localisation} onChange={(event) => setLocalisation(event.target.value)} type="text" placeholder="Votre ville " /> 
             </div>
             <div>
+                <div>&nbsp;</div>
                 <button type="submit">
-                Rechercher 🔎
+                    Rechercher 🔎
                 </button>
             </div>        
         </form>

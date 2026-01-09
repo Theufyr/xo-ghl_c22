@@ -23,14 +23,16 @@ export default function HowTo() {
         }
     ];
     return (
-        <section>
+        <section id="howto">
             <h2>Comment ça marche</h2>
             <p>Adopter un animal est un engagement sérieux et à long terme. Voici notre processus d'adoption en quelques étapes simples.</p>
-        {
-            stepsInfo.map((info) =>
-                <Steps icon={info.icon} title={info.title} description={info.description}/>
-            )
-        }
+            <div>
+                {
+                    stepsInfo.map((info) =>
+                        <Steps icon={info.icon} title={info.title} description={info.description}/>
+                    )
+                }
+            </div>
         </section>
     )
 }

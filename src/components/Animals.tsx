@@ -1,7 +1,7 @@
 import Thumbnails from "./Thumbnails"
 export default function Animals() {
 return(
-    <section>
+    <section id="animals">
         <h2>nos animaux à adopter</h2>
         <p>Découvrez en images tous nos animaux qui attendent une famille aimante. Chaque photo raconte une histoire et un espoir.</p>
         <Thumbnails/>
