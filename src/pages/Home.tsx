@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar"
 import HowTo from "../components/HowTo"
 import Footer from "../components/Footer"
 import Animals from "../components/Animals"
+import Options from "../components/Options"
 
 export default function Home() {
     return(
@@ -11,6 +12,7 @@ export default function Home() {
             <Title/>
             <Animals/>
             <HowTo/>
+            <Options/>
             <Footer/>
             
 

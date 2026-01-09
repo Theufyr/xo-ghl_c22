@@ -34,6 +34,7 @@
     font-family: BadComic;
     color: var(--black-color);
     font-size: 14px;
+    min-width: 420px;
 }
 
 @font-face {
@@ -130,14 +131,24 @@ nav>div div:first-child img{
 nav>div div:last-child {
     margin-top: 0.3rem;
 }
-nav>div div:last-child span {
+nav>div div:last-child span, #button1, #button2, #button3 {
     padding: 0.5rem  1rem;
     border-radius: 1rem;
     color: var(--white-color);
     background-color: var(--btn-secondary-bg);
 }
-nav>div div:last-child span:hover {
+nav>div div:last-child span:hover, #button1:hover, #button2:hover, #button3:hover {
     background-color: var(--btn-primary-hover-bg);
+}
+#button1 {
+    margin-right: 1rem;
+    background-color: var(--black-color);
+}
+#button2 {
+    margin-right: 1rem;
+}
+#button3 {
+    background-color: var(--btn-accent-bg);
 }
 
 /* Section */
