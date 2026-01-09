@@ -1,3 +1,6 @@
+import dotenv from'dotenv';
+dotenv.config({path: '.env.local'});
+dotenv.config({path: '.env'});
 import express from 'express';
 import cors from 'cors';
 import mysql from 'mysql2/promise';
@@ -9,8 +12,8 @@ app.use(express.json());
 const db = await mysql.createConnection({
   port: 3306, // Port MySQL (par défaut : 3306)
   host: 'localhost',
-  user: 'root',
-  password: '',
+  user: 'adaopte_user',
+  password: process.env.VITE_DB_PASSWORD,
   database: 'adaopte'
 });
 
