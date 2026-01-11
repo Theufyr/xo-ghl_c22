@@ -1,6 +1,5 @@
 // import { Form } from "react-router-dom";
 import { useState } from "react";
-import AnimalsList from "./AnimalsList";
 export default function Search() {
   const [localisation, setLocalisation] = useState("");
   const [animalType, setAnimalType] = useState("");
@@ -9,32 +8,34 @@ export default function Search() {
     setLocalisation("");
   }
   return (
-    <form onSubmit={submitFrom}>
-      <div>
+    <>
+      <form onSubmit={submitFrom}>
         <div>
-          <label htmlFor="">Type d'animal</label>
+          <div>
+            <label htmlFor="">Type d'animal</label>
+          </div>
+          <select onChange={(event) => setAnimalType(event.target.value)}>
+            <option value="chat">chat </option>
+            <option value="chien">chien</option>
+          </select>
         </div>
-        <select onChange={(event) => setAnimalType(event.target.value)}>
-          <option value="chat">chat </option>
-          <option value="chien">chien</option>
-        </select>
-      </div>
-      <div>
         <div>
-          <label htmlFor="">Localisation</label>
+          <div>
+            <label htmlFor="">Localisation</label>
+          </div>
+          <input
+            value={localisation}
+            onChange={(event) => setLocalisation(event.target.value)}
+            type="text"
+            placeholder="Votre ville "
+          />
         </div>
-        <input
-          value={localisation}
-          onChange={(event) => setLocalisation(event.target.value)}
-          type="text"
-          placeholder="Votre ville "
-        />
-      </div>
-      <div>
-        <div>&nbsp;</div>
-        <button type="submit">Rechercher 🔎</button>
-      </div>
-      <AnimalsList />
-    </form>
+        <div>
+          <div>&nbsp;</div>
+          <button type="submit">Rechercher 🔎</button>
+        </div>
+      </form>
+  
+    </>
   );
 }
