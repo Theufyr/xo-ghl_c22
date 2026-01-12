@@ -16,18 +16,20 @@ export default function AnimalsList() {
   if (error) return <p>Erreur : {error.message}</p>;
 
   return (
-    <div style={{}}>
+    <div id="animal_list">
       {data.map((animal: any) => (
-        <section key={animal.id}>
-          <img src={`/assets/img/${animal.image_url}`} />
+        <article key={animal.id} className="animal_list">
+          <div>
+            <img src={`/src/assets/img/${animal.image_url}`} />
+          </div>
           <p> {animal.type}</p>
-          <p style={{ color: "var(--accent-color)" }}> {animal.animal_name} </p>
+          <p className="animal_name"> {animal.animal_name} </p>
           <p>
             {animal.age} ans • {animal.breed}
           </p>
           <p> {animal.city}</p>
           <p> {animal.description}</p>{" "}
-        </section>
+        </article>
       ))}
     </div>
   );
