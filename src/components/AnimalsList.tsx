@@ -19,7 +19,7 @@ export default function AnimalsList() {
     <div style={{}}>
       {data.map((animal: any) => (
         <section key={animal.id}>
-          <img src={`/assets/img/${animal.image_url}`} />
+          <img src={`src/assets/img/${animal.image_url}`} />
           <p> {animal.type}</p>
           <p style={{ color: "var(--accent-color)" }}> {animal.animal_name} </p>
           <p>
