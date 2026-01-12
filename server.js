@@ -12,7 +12,7 @@ app.use(express.json());
 const db = await mysql.createConnection({
   port: 3306, // Port MySQL (par défaut : 3306)
   host: 'localhost',
-  user: 'adaopte_user',
+  user: process.env.VITE_DB_USER,
   password: process.env.VITE_DB_PASSWORD,
   database: 'adaopte'
 });
