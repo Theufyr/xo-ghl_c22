@@ -5,11 +5,11 @@ import AnimalCard from "../components/AnimalCard"
 
 export default function Adopt() {
     return (
-        <>
+        <main id="adopt">
             <Navbar />
             <SearchBar />
             <AnimalCard />
             <Footer />
-        </>
+        </main>
     )
 }
