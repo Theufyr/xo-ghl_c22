@@ -61,7 +61,7 @@ nav,
 section,
 footer,
 form,
-section#howto article {
+#howto article {
   margin-bottom: 0.5rem;
   padding: 1rem;
   justify-self: center;
@@ -70,6 +70,7 @@ section#howto article {
   box-shadow: var(--shadow-md);
 }
 
+/* SearchBar */
 form {
   width: 60%;
   margin-top: 6rem;
@@ -171,12 +172,12 @@ section {
   text-align: center;
   background-color: var(--light-color);
 }
-
 section p {
   width: 60%;
   justify-self: center;
 }
 
+/* Title */
 #title {
   width: 100%;
   color: var(--white-color);
@@ -187,6 +188,8 @@ section p {
 #title h1 {
   margin-top: 7rem;
 }
+
+/* HowTo */
 #howto {
   background-color: var(--white-color);
   box-shadow: none;
@@ -201,31 +204,36 @@ section p {
 #howto article {
   width: 25%;
 }
-article {
+#howto article h3 {
+  text-align: center;
+}
+#howto article {
   width: 100%;
   text-align: center;
 }
-article div {
+#howto article div {
   display: flex;
   justify-content: center;
 }
-article img {
+#howto article img {
   width: 20%;
 }
-#animal_list>div {
+
+/* AnimalCard */
+#animal_card {
   width:100%;
   display:flex;
   flex-wrap: wrap;
 }
-.animal_list {
+.animal_card {
   width:25%;
 }
-.animal_list div {
+.animal_card div {
   width: 100%;
   height: 20rem;
   overflow: hidden;
 }
-.animal_list div img {
+.animal_card div img {
   width: 100%;
   height: auto;
 }
@@ -238,6 +246,8 @@ article img {
 footer {
   color: var(--white-color);
   background-color: var(--btn-primary-bg);
+  width: 100%;
+  margin-bottom: 0;
 }
 footer img {
   padding: 0.2rem;

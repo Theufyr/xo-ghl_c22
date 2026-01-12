@@ -16,9 +16,9 @@ export default function AnimalCard() {
   if (error) return <p>Erreur : {error.message}</p>;
 
   return (
-    <div id="animal_list">
+    <div id="animal_card">
       {data.map((animal: any) => (
-        <article key={animal.id} className="animal_list">
+        <article key={animal.id} className="animal_card">
           <div>
             <img src={`/src/assets/img/${animal.image_url}`} />
           </div>
