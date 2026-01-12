@@ -1,6 +1,6 @@
 // import { Form } from "react-router-dom";
 import { useState } from "react";
-export default function Search() {
+export default function SearchBar() {
   const [localisation, setLocalisation] = useState("");
   const [animalType, setAnimalType] = useState("");
   function submitFrom(event: any) {

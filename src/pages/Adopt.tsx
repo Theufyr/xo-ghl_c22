@@ -1,15 +1,15 @@
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
-import Search from "../components/Search"
-import AnimalsList from "../components/AnimalsList"
+import SearchBar from "../components/SearchBar"
+import AnimalCard from "../components/AnimalCard"
 
 export default function Adopt() {
-    return(
+    return (
         <>
-            <Navbar/>
-            <Search/>
-            <AnimalsList/>
-            <Footer/>
+            <Navbar />
+            <SearchBar />
+            <AnimalCard />
+            <Footer />
         </>
     )
 }

@@ -1,4 +1,4 @@
-export default function Thumbnails() {
+export default function AnimalGrid() {
     return(
         <div></div>
     )
