@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { sql } from "../lib/sql";
-export default function AnimalsList() {
+export default function AnimalCard() {
   const { data, isLoading, error } = useQuery({
     queryKey: ["animals"],
     queryFn: async () => {
