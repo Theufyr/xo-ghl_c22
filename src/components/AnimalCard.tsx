@@ -16,19 +16,16 @@ export default function AnimalCard() {
   if (error) return <p>Erreur : {error.message}</p>;
 
   return (
-    <div id="animal_list">
+    <div id="animal_card">
       {data.map((animal: any) => (
-        <article key={animal.id} className="animal_list">
-          <div>
-            <img src={`/src/assets/img/${animal.image_url}`} />
-          </div>
-          <p> {animal.type}</p>
-          <p className="animal_name"> {animal.animal_name} </p>
-          <p>
-            {animal.age} ans • {animal.breed}
-          </p>
-          <p> {animal.city}</p>
-          <p> {animal.description}</p>{" "}
+        <article key={animal.id} className="animal_card">
+          <div style={{backgroundImage:`url(./src/assets/img/${animal.image_url})`}}></div>
+          <p>{animal.type}</p>
+          <p className="animal_name">{animal.animal_name}</p>
+          <p>{animal.age} ans • {animal.breed}</p>
+          <p>{animal.city}</p>
+          <p>{animal.description}</p>
+          <button className="button1">Rencontrer</button>
         </article>
       ))}
     </div>

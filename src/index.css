@@ -51,6 +51,12 @@ h2 {
   font-family: AmaticSC;
 }
 
+button {
+  outline: none;
+  cursor: pointer;
+  border: none;
+}
+
 a:any-link {
   color: var(--dark-bg);
   text-decoration: none;
@@ -61,7 +67,8 @@ nav,
 section,
 footer,
 form,
-section#howto article {
+#howto article,
+.animal_card {
   margin-bottom: 0.5rem;
   padding: 1rem;
   justify-self: center;
@@ -70,6 +77,11 @@ section#howto article {
   box-shadow: var(--shadow-md);
 }
 
+main#adopt {
+  background-color: var(--light-color);
+}
+
+/* SearchBar */
 form {
   width: 60%;
   margin-top: 6rem;
@@ -95,14 +107,13 @@ form select,
 form input {
   border-radius: 0.2rem;
 }
-form button,
-#animals button {
+form button {
   border-radius: 1rem;
   color: var(--white-color);
   background-color: var(--black-color);
 }
-#animals button {
-  padding: 0.2rem 0.5rem;
+form button:hover {
+  background-color: var(--btn-primary-hover-bg);
 }
 
 /* NavBar */
@@ -140,28 +151,28 @@ nav > div div:last-child {
   margin-top: 0.3rem;
 }
 nav > div div:last-child span,
-#button1,
-#button2,
-#button3 {
+.button1,
+.button2,
+.button3 {
   padding: 0.5rem 1rem;
   border-radius: 1rem;
   color: var(--white-color);
   background-color: var(--btn-secondary-bg);
 }
 nav > div div:last-child span:hover,
-#button1:hover,
-#button2:hover,
-#button3:hover {
+.button1:hover,
+.button2:hover,
+.button3:hover {
   background-color: var(--btn-primary-hover-bg);
 }
-#button1 {
+.button1 {
   margin-right: 1rem;
   background-color: var(--black-color);
 }
-#button2 {
+.button2 {
   margin-right: 1rem;
 }
-#button3 {
+.button3 {
   background-color: var(--btn-accent-bg);
 }
 
@@ -171,12 +182,12 @@ section {
   text-align: center;
   background-color: var(--light-color);
 }
-
 section p {
   width: 60%;
   justify-self: center;
 }
 
+/* Title */
 #title {
   width: 100%;
   color: var(--white-color);
@@ -187,6 +198,8 @@ section p {
 #title h1 {
   margin-top: 7rem;
 }
+
+/* HowTo */
 #howto {
   background-color: var(--white-color);
   box-shadow: none;
@@ -201,31 +214,42 @@ section p {
 #howto article {
   width: 25%;
 }
-article {
+#howto article h3 {
+  text-align: center;
+}
+#howto article {
   width: 100%;
   text-align: center;
 }
-article div {
+#howto article div {
   display: flex;
   justify-content: center;
 }
-article img {
+#howto article img {
   width: 20%;
 }
-#animal_list>div {
+
+/* AnimalCard */
+#animal_card {
   width:100%;
-  display:flex;
+  margin: 0;
+  padding: 0;
+  display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
-.animal_list {
-  width:25%;
+.animal_card {
+  width:20%;
 }
-.animal_list div {
+.animal_card>div:first-child {
   width: 100%;
-  height: 20rem;
+  height: 10rem;
   overflow: hidden;
+  background-color: var(--primary-color);
+  background-size: 100%;
+  background-position-y: center;
 }
-.animal_list div img {
+.animal_card div img {
   width: 100%;
   height: auto;
 }
@@ -238,6 +262,8 @@ article img {
 footer {
   color: var(--white-color);
   background-color: var(--btn-primary-bg);
+  width: 100%;
+  margin-bottom: 0;
 }
 footer img {
   padding: 0.2rem;
