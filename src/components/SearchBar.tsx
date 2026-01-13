@@ -1,7 +1,5 @@
-// import { Form } from "react-router-dom";
 import { useState } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { sql } from "../lib/sql";
+import UseQuerySearchBar from "../hooks/UseQuerySearchBar"
 export default function SearchBar() {
   const [localisation, setLocalisation] = useState("");
   const [animalType, setAnimalType] = useState("");
@@ -9,20 +7,12 @@ export default function SearchBar() {
     event.preventDefault();
     setLocalisation("");
   }
-  const { data, isLoading, error } = useQuery({
-    queryKey: ["animals"],
-    queryFn: async () => {
-      const result = await sql(
-        "SELECT type, NULL AS city, NULL AS zip_code FROM types UNION ALL SELECT NULL AS type, city, zip_code FROM cities"
-      );
-      if (!result.success) throw new Error(result.error);
-      return result.data;
-    },
-  });
-
+  const { data, isLoading, error } = UseQuerySearchBar ();
+  
   if (isLoading) return <p>Chargement...</p>;
   if (error) return <p>Erreur : {error.message}</p>;
 
+  console.log (data);
   return (
     <>
       <form onSubmit={submitFrom}>
