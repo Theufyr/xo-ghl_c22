@@ -1,37 +1,19 @@
-import { useQuery } from "@tanstack/react-query";
-import { sql } from "../lib/sql";
-export default function AnimalCard() {
-  const { data, isLoading, error } = useQuery({
-    queryKey: ["AnimalCard"],
-    queryFn: async () => {
-      const result = await sql(
-        "SELECT animals.id, animals.name AS animal_name, animals.age, animals.description, animals.image_url AS image_url, breeds.breed, types.type, shelters.name AS shelter_name, cities.city FROM animals JOIN breeds ON animals.breed_id = breeds.id JOIN types ON breeds.type_id = types.id JOIN shelters ON animals.shelter_id = shelters.id JOIN cities ON shelters.city_id = cities.id"
-      );
-      if (!result.success) throw new Error(result.error);
-      return result.data;
-    },
-  });
+import type { typesAnimals, typesAnimalInfos } from "../interface/Props";
 
-  if (isLoading) return <p>Chargement...</p>;
-  if (error) return <p>Erreur : {error.message}</p>;
-
+export default function AnimalCard({animalInfos}: typesAnimalInfos) {
   return (
-    <div id="animal_card">
-      {data.map((animal: any) => (
-        <article key={animal.id} className="animal_card">
+        <article key={animalInfos.id} className="animal_card">
           <div>
-            <div className="animal_img" style={{backgroundImage:`url(./src/assets/img/${animal.image_url})`}}></div>
+            <div className="animal_img" style={{backgroundImage:`url(./src/assets/img/${animalInfos.image_url})`}}></div>
             <div>
-              <p>{animal.type}</p>
-              <p className="animal_name">{animal.animal_name}</p>
-              <p>{animal.age} ans • {animal.breed}</p>
-              <p>{animal.city}</p>
+              <p>{animalInfos.type}</p>
+              <p className="animal_name">{animalInfos.animal_name}</p>
+              <p>{animalInfos.age} ans • {animalInfos.breed}</p>
+              <p>{animalInfos.city}</p>
             </div>
-            <p>{animal.description}</p>
+            <p>{animalInfos.description}</p>
           </div>
           <button className="button1">Rencontrer</button>
         </article>
-      ))}
-    </div>
-  );
-}
+      )
+    }

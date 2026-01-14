@@ -12,7 +12,6 @@ export default function SearchBar() {
   if (isLoading) return <p>Chargement...</p>;
   if (error) return <p>Erreur : {error.message}</p>;
 
-  console.log (data);
   return (
     <>
       <form onSubmit={submitFrom}>
