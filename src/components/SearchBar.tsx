@@ -34,10 +34,10 @@ export default function SearchBar() {
             <label htmlFor="">Type d'animal</label>
           </div>
           <select onChange={(event) => setAnimalType(event.target.value)}>
-            <option value="all">Tous les animaux</option>
+            <option key="all" value="all">Tous les animaux</option>
             {data.map((form: any) =>
               form.type !== null ? (
-                <option value={form.type}> {form.type} </option>
+                <option key={form.type} value={form.type}> {form.type} </option>
               ) : (
                 ""
               )
