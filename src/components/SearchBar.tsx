@@ -34,7 +34,7 @@ export default function SearchBar() {
             <label htmlFor="">Type d'animal</label>
           </div>
           <select onChange={(event) => setAnimalType(event.target.value)}>
-            <option key="all" value="all">Tous les animaux</option>
+            <option value="all">Tous les animaux</option>
             {data.map((form: any) =>
               form.type !== null ? (
                 <option key={form.type} value={form.type}> {form.type} </option>
