@@ -1,6 +1,6 @@
 import UseQueryAnimalCard from "../hooks/UseQueryAnimalCard";
 import AnimalCard from "./AnimalCard";
-import type { typesAnimals,typesAnimalInfos } from "../interface/Props";
+import type { typesAnimals } from "../interface/Props";
 
 export default function AnimalList() {
   const { data, isLoading, error } = UseQueryAnimalCard ();

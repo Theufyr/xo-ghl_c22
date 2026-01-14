@@ -1,4 +1,4 @@
-import type { typesAnimals, typesAnimalInfos } from "../interface/Props";
+import type { typesAnimalInfos } from "../interface/Props";
 
 export default function AnimalCard({animalInfos}: typesAnimalInfos) {
   return (

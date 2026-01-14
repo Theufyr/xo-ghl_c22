@@ -229,6 +229,21 @@ section p {
   width: 20%;
 }
 
+/* AnimalGrid */
+#animal_grid {
+  width:80%;
+  height:70rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-self: center;
+  gap: 0.5rem;
+}
+#animal_grid img {
+  width:22%;
+  border-radius: 1rem;
+}
+
 /* AnimalCard */
 #animal_card {
   width:100%;
