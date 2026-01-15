@@ -9,25 +9,27 @@ export default function UseQueryAnimalCard(
   getAnimalType: typesParamsAnimalType,
   getLocalisation: typesParamsLocalisation
 ) {
-  const where = "";
-  const paramsWhere=[];
+  console.log(getAnimalType, getLocalisation);
+  let where = "";
+  const paramsWhere: any[] = [];
 
   if (getAnimalType !== null && getAnimalType !== "") {
-    where = `WHERE types.type = ${getAnimalType}`;
+    if (getAnimalType !=="all") {
+      where = `WHERE types.type = ?`;
+      paramsWhere.push(getAnimalType);
+    }
   }
   if (getLocalisation !== null && getLocalisation !== "") {
-    where = `WHERE cities.city = ${getLocalisation}`;
+    paramsWhere.push(getLocalisation);
+    if (where == "") {
+      where = `WHERE cities.city = ?`;
+    } else {
+      where = `WHERE types.type = ? AND cities.city = ?`;
+    }
   }
-  if (
-    (getAnimalType !== null || getLocalisation !== "") &&
-    getLocalisation !== null &&
-    getLocalisation !== ""
-  ) {
-    where = `WHERE types.type = ${getAnimalType} AND cities.city = ${getLocalisation}`;
-  }
-
+  console.log(where, paramsWhere);
   return useQuery({
-    queryKey: ["AnimalCard"],
+    queryKey: ["AnimalCard", getAnimalType, getLocalisation],
     queryFn: async () => {
       const result = await sql(
         `SELECT animals.id,
@@ -45,8 +47,8 @@ export default function UseQueryAnimalCard(
         JOIN shelters ON animals.shelter_id = shelters.id 
         JOIN cities ON shelters.city_id = cities.id
         ${where}
-        
-        `
+        `,
+        paramsWhere
         //WHERE types.type = 'Chat'
       );
       if (!result.success) throw new Error(result.error);
