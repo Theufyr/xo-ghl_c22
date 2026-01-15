@@ -229,6 +229,35 @@ section p {
   width: 20%;
 }
 
+/* AnimalGrid */
+#animal_grid {
+  width:80%;
+  height:35rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-self: center;
+  gap: 0.2rem;
+}
+#animal_grid img {
+  width:22%;
+  border-radius: 0.5rem;
+}
+/* #animal_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
+  grid-auto-rows: 0.5rem;
+  grid-auto-flow: dense;
+  columns: 25%;
+  column-gap: 0.5rem;
+}
+#animal_grid img {
+  width:22%;
+  border-radius: 1rem;
+  break-inside: avoid;
+  margin-bottom: 0.5rem;
+} */
+
 /* AnimalCard */
 #animal_card {
   width:100%;
