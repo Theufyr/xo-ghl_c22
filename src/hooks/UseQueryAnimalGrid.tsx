@@ -6,7 +6,7 @@ export default function UseQueryAnimalGrid() {
       queryKey: ["AnimalGrid"],
       queryFn: async () => {
         const result = await sql(
-          `SELECT id, image_url FROM animals`
+          `SELECT id, image_url FROM animals LIMIT 8`
         );
         if (!result.success) throw new Error(result.error);
         return result.data;
