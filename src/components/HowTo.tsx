@@ -28,8 +28,8 @@ export default function HowTo() {
             <p>Adopter un animal est un engagement sérieux et à long terme. Voici notre processus d'adoption en quelques étapes simples.</p>
             <div>
                 {
-                    stepsInfo.map((info) =>
-                        <Steps icon={info.icon} title={info.title} description={info.description}/>
+                    stepsInfo.map((info, index) =>
+                        <Steps key={index} icon={info.icon} title={info.title} description={info.description}/>
                     )
                 }
             </div>

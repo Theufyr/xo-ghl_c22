@@ -1,15 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
 import { sql } from "../lib/sql";
-import type {
-  typesParamsAnimalType,
-  typesParamsLocalisation,
-} from "../interface/Props";
+import { useSearchParams } from "react-router";
 
-export default function UseQueryAnimalCard(
-  getAnimalType: typesParamsAnimalType,
-  getLocalisation: typesParamsLocalisation
-) {
-  
+export default function UseQueryCount() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const getAnimalType = (searchParams.get("animalType")) ?? "";
+  const getLocalisation = (searchParams.get("localisation")) ?? "";
+
   let where = "";
   const paramsWhere: any[] = [];
 
@@ -27,32 +24,24 @@ export default function UseQueryAnimalCard(
       where = `WHERE types.type = ? AND cities.city = ?`;
     }
   }
-  
-  return useQuery({
-    queryKey: ["AnimalCard", getAnimalType, getLocalisation],
+
+   return useQuery({
+    queryKey: ["count", getAnimalType, getLocalisation],
     queryFn: async () => {
       const result = await sql(
-        `SELECT animals.id,
-          animals.name AS animal_name,
-          animals.age, 
-          animals.description,
-          animals.image_url AS image_url,
-          breeds.breed, 
-          types.type,
-          shelters.name AS shelter_name,
-          cities.city
+        `SELECT
+        COUNT(animals.id) AS count
         FROM animals
         JOIN breeds ON animals.breed_id = breeds.id
         JOIN types ON breeds.type_id = types.id 
         JOIN shelters ON animals.shelter_id = shelters.id 
         JOIN cities ON shelters.city_id = cities.id
         ${where}
-        LIMIT 8
         `,
         paramsWhere
       );
       if (!result.success) throw new Error(result.error);
       return result.data;
-    },
+    }
   });
 }
