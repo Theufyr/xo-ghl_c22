@@ -1,23 +1,10 @@
 import UseQueryAnimalCard from "../hooks/UseQueryAnimalCard";
 import AnimalCard from "./AnimalCard";
-import type {
-  typesAnimals,
-  typesParamsAnimalType,
-  typesParamsLocalisation,
-
-} from "../interface/Props";
-import { useSearchParams} from "react-router-dom";
+import type { typesAnimals } from '../interface/Props';
 
 export default function AnimalList() {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const getAnimalType: typesParamsAnimalType = searchParams.get("animalType");
-  const getLocalisation: typesParamsLocalisation =
-    searchParams.get("localisation");
 
-  const { data, isLoading, error } = UseQueryAnimalCard(
-    getAnimalType,
-    getLocalisation
-  );
+  const { data, isLoading, error } = UseQueryAnimalCard();
 
   if (isLoading) return <p>Chargement...</p>;
   if (error) return <p>Erreur : {error.message}</p>;
