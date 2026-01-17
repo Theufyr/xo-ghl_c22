@@ -4,6 +4,8 @@ import SearchCount from "./SearchCount";
 import { useNavigate, useSearchParams, useLocation } from "react-router";
 
 export default function SearchBar() {
+  const currentPage = useLocation();
+
   const [searchParams, setSearchParams] = useSearchParams();
   const getAnimalType = (searchParams.get("animalType")) ?? "";
   const getLocalisation = (searchParams.get("localisation")) ?? "";
@@ -24,8 +26,6 @@ export default function SearchBar() {
   const querySelect = UseQuerySelectResult();
   if (querySelect.isLoading) return <p>Chargement...</p>;
   if (querySelect.error) return <p>Erreur : {querySelect.error.message}</p>;
-
-  const currentPage = useLocation();
 
   return (
     <>
