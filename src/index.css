@@ -317,6 +317,26 @@ section p {
   font-weight: bold;
 }
 
+/* Paging */
+#paging {
+  display: flex;
+  justify-content: center;
+}
+#paging button {
+  padding: 0.5rem 0.8rem;
+  margin: 0.5rem;
+  border-radius: 0.2rem;
+  color: var(--secondary-color);
+  background-color: var(--white-color);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+}
+#paging button.selected {
+  color: var(--white-color);
+  background-color: var(--btn-secondary-bg);
+}
+
+
 /* Footer */
 footer {
   color: var(--white-color);
