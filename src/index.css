@@ -248,32 +248,30 @@ section p {
 
 /* AnimalGrid */
 #animal_grid {
-  width:80%;
-  height:35rem;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-self: center;
-  gap: 0.2rem;
-}
-#animal_grid img {
-  width:22%;
-  border-radius: 0.5rem;
-}
-/* #animal_grid {
+  margin-bottom: 1rem;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
-  grid-auto-rows: 0.5rem;
-  grid-auto-flow: dense;
-  columns: 25%;
-  column-gap: 0.5rem;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 0.5rem;
+  height: 30rem;
+}
+.grid_card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  grid-row: span 1;
+}
+.grid_card:nth-child(1), .grid_card:nth-child(3),
+.grid_card:nth-child(5), .grid_card:nth-child(6) {
+  grid-row: span 2;
 }
 #animal_grid img {
-  width:22%;
-  border-radius: 1rem;
-  break-inside: avoid;
-  margin-bottom: 0.5rem;
-} */
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
 
 /* AnimalCard */
 #animal_card {
