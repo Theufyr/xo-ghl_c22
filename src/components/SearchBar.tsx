@@ -18,7 +18,9 @@ export default function SearchBar() {
     event.preventDefault();
     const params = new URLSearchParams();
     params.set("animalType", animalType);
-    params.set("localisation", localisation);
+    if (localisation !== "") {
+      params.set("localisation", localisation);
+    }
     const urlSearch = "/jadopte?" + params.toString();
     navigate(urlSearch);
   }

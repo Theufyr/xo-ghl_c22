@@ -49,6 +49,10 @@
 h1,
 h2 {
   font-family: AmaticSC;
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2.5rem;
 }
 
 button {
@@ -84,7 +88,8 @@ main#adopt {
 /* SearchBar */
 form {
   width: 60%;
-  margin-top: 6rem;
+  margin: 1rem 0 0 0;
+  padding: 0;
   text-align: left;
   border-radius: 0.5rem;
   background-color: var(--white-color);
@@ -101,6 +106,7 @@ form > div:first-child > div {
 #search_result {
   display: flex;
   justify-content: space-between;
+  padding-bottom: 1rem;
 }
 form select,
 form input,
@@ -192,6 +198,9 @@ nav > div div:last-child span:hover,
 .button3 {
   background-color: var(--btn-accent-bg);
 }
+#options button {
+  height: 2.5rem;
+}
 
 /* Section */
 section {
@@ -204,16 +213,19 @@ section p {
   justify-self: center;
 }
 
-/* Title */
-#title {
+/* Hero */
+#hero {
   width: 100%;
   color: var(--white-color);
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url("./src/assets/img/background.jpg");
 }
-#title h1 {
+#hero h1 {
   margin-top: 7rem;
+}
+#hero_text {
+  margin-bottom: 5rem;
 }
 
 /* HowTo */

@@ -2,7 +2,7 @@ export interface typesAnimals {
   id: number;
   image_url: string;
   type?: string;
-  animal_name?: string;
+  animal_name: string;
   age?: number;
   breed?: string;
   city?: string;
