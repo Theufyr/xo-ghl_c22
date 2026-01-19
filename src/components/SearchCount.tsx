@@ -1,7 +1,14 @@
 
 import UseQueryCountResult from "../hooks/UseQueryCountResult";
+import { useNavigate } from "react-router";
 
 export default function SearchCount({setAnimalType, setLocalisation}: any) {
+    let navigate = useNavigate();
+    function reinitSearchParams() {
+        setAnimalType("all");
+        setLocalisation("");
+        navigate("/jadopte")
+    }
     const queryCount = UseQueryCountResult();
     if (queryCount.isLoading) return <p>Chargement...</p>;
     if (queryCount.error) return <p>Erreur : {queryCount.error.message}</p>;
@@ -17,7 +24,7 @@ export default function SearchCount({setAnimalType, setLocalisation}: any) {
     return (
         <div id="search_result">
             <div>{countDisplay}</div>
-            <div id="reinit" onClick={() => {setAnimalType("all"); setLocalisation("")}} >Réinitialiser les filtres</div>
+            <div id="reinit" onClick={() => {reinitSearchParams()}} >Réinitialiser les filtres</div>
         </div>
     )
 }
