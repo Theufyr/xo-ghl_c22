@@ -6,14 +6,17 @@ import { useNavigate, useSearchParams, useLocation } from "react-router";
 export default function SearchBar() {
   const currentPage = useLocation();
 
+  // depuis l'URL : récupération des variables animalType & localisation
   const [searchParams, setSearchParams] = useSearchParams();
   const getAnimalType = (searchParams.get("animalType")) ?? "";
   const getLocalisation = (searchParams.get("localisation")) ?? "";
 
+  // pour le formulaire : mise en mémoire des états de animalType & localisation
   const [animalType, setAnimalType] = useState(getAnimalType);
   const [localisation, setLocalisation] = useState(getLocalisation);
   let navigate = useNavigate();
   
+  // action lors de l'envoi du formulaire avec Rechercher
   function submitForm(event: any) {
     event.preventDefault();
     const params = new URLSearchParams();
@@ -25,6 +28,7 @@ export default function SearchBar() {
     navigate(urlSearch);
   }
 
+  // récupération des types d'animaux à afficher dans le menu déroulant
   const querySelect = UseQuerySelectResult();
   if (querySelect.isLoading) return <p>Chargement...</p>;
   if (querySelect.error) return <p>Erreur : {querySelect.error.message}</p>;
