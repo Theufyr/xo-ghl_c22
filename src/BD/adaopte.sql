@@ -1,6 +1,6 @@
 DROP DATABASE IF EXISTS adaopte CHARACTER SET utf8 COLLATE utf8_unicode_ci; 
 
-CREATE DATABASE adaopte;
+CREATE DATABASE adaopte CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
 USE adaopte;
 
