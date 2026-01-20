@@ -185,8 +185,12 @@ nav > div div:last-child span,
 nav > div div:last-child span:hover,
 .button1:hover,
 .button2:hover,
-.button3:hover {
+.button3:hover,
+#paging button:hover {
   background-color: var(--btn-primary-hover-bg);
+}
+#paging button:hover {
+  color: var(--white-color);
 }
 .button1 {
   margin-right: 1rem;
