@@ -1,4 +1,4 @@
-import Title from "../components/Title"
+import Hero from "../components/Hero"
 import Navbar from "../components/Navbar"
 import HowTo from "../components/HowTo"
 import Footer from "../components/Footer"
@@ -9,13 +9,11 @@ export default function Home() {
     return(
         <>
             <Navbar/>
-            <Title/>
+            <Hero />
             <Animals/>
             <HowTo/>
             <Options/>
             <Footer/>
-            
-
         </>
     )
 }

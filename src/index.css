@@ -49,6 +49,10 @@
 h1,
 h2 {
   font-family: AmaticSC;
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2.5rem;
 }
 
 button {
@@ -84,17 +88,25 @@ main#adopt {
 /* SearchBar */
 form {
   width: 60%;
-  margin-top: 6rem;
-  display: flex;
-  justify-self: center;
-  justify-content: space-around;
+  margin: 1rem 0 0 0;
+  padding: 0;
   text-align: left;
   border-radius: 0.5rem;
   background-color: var(--white-color);
 }
-form > div {
+#search_inputs {
+  display: flex;
+  justify-self: center;
+  justify-content: space-around;
+}
+form > div:first-child > div {
   width: 33%;
   padding: 1rem;
+}
+#search_result {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1rem;
 }
 form select,
 form input,
@@ -114,6 +126,17 @@ form button {
 }
 form button:hover {
   background-color: var(--btn-primary-hover-bg);
+}
+#search_result div {
+  width:45%;
+  padding: 0 3rem;
+  font-size: 0.8rem;
+}
+#reinit {
+  color: var(--btn-accent-bg);
+  text-decoration: underline;
+  cursor: pointer;
+  text-align:right;
 }
 
 /* NavBar */
@@ -162,8 +185,12 @@ nav > div div:last-child span,
 nav > div div:last-child span:hover,
 .button1:hover,
 .button2:hover,
-.button3:hover {
+.button3:hover,
+#paging button:hover {
   background-color: var(--btn-primary-hover-bg);
+}
+#paging button:hover {
+  color: var(--white-color);
 }
 .button1 {
   margin-right: 1rem;
@@ -174,6 +201,9 @@ nav > div div:last-child span:hover,
 }
 .button3 {
   background-color: var(--btn-accent-bg);
+}
+#options button {
+  height: 2.5rem;
 }
 
 /* Section */
@@ -187,16 +217,19 @@ section p {
   justify-self: center;
 }
 
-/* Title */
-#title {
+/* Hero */
+#hero {
   width: 100%;
   color: var(--white-color);
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url("./src/assets/img/background.jpg");
 }
-#title h1 {
+#hero h1 {
   margin-top: 7rem;
+}
+#hero_text {
+  margin-bottom: 5rem;
 }
 
 /* HowTo */
@@ -227,6 +260,33 @@ section p {
 }
 #howto article img {
   width: 20%;
+}
+
+/* AnimalGrid */
+#animal_grid {
+  margin-bottom: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 0.5rem;
+  height: 30rem;
+}
+.grid_card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  grid-row: span 1;
+}
+.grid_card:nth-child(1), .grid_card:nth-child(3),
+.grid_card:nth-child(5), .grid_card:nth-child(6) {
+  grid-row: span 2;
+}
+#animal_grid img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 /* AnimalCard */
@@ -272,6 +332,26 @@ section p {
   color: var(--accent-color);
   font-weight: bold;
 }
+
+/* Paging */
+#paging {
+  display: flex;
+  justify-content: center;
+}
+#paging button {
+  padding: 0.5rem 0.8rem;
+  margin: 0.5rem;
+  border-radius: 0.2rem;
+  color: var(--secondary-color);
+  background-color: var(--white-color);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+}
+#paging button.selected {
+  color: var(--white-color);
+  background-color: var(--btn-secondary-bg);
+}
+
 
 /* Footer */
 footer {
